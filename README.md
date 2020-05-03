@@ -13,28 +13,42 @@ This repo contains code for reproducing key results in [Image-driven discriminat
 
 ## Feature Engineering for Microstructure Characterization
 
-### Resources
-
-- ```train.py```
-- ``predict.py``
-- ```utils.py```
-- ```features/```
-
 ### Collect features
 
-#### Feature 1: Area features
+The list of features implemented here are:
+- Area features
+- Spatial features
+- Haralick features (from mahotas)
+- LBP features (from scikit-image)
 
-After features are extracted, you can plot the area features by running
-
-```shell script
-python plot/area_features.py results/area_featurs.csv binary figures/area_features_binary.png
+To collect features from image files, run
+```python
+import features
+feature_names = ['area', 'spatial', 'lbp', 'haralick']
+f = features.collect_features_by_filenames(filenames, features_names)
 ```
+
+Default arguments of ```collect_features_by_filenames()``` include:
+- ```d=15```: param for bilateral filtering used for segmentation, diameter of each pixel neighborhood
+- ```sigma_color=75```: param for bilateral filtering used for segmentation, filter sigma in the color space
+- ```sigma_space=75```: param for bilateral filtering used for segmentation, filter sigma in the coordinate space
+- ```with_info_bar=True```: boolean, whether to remove info bar from the image using ```utils.crop_image()```
+- ```distance=1```: param for haralick features, the distance to consider while computing the occurence matrix
+- ```P=10```: param for LBP features, number of circularly symmetric neighbor set points (quantization of the angular space)
+- ```R=5```: param for LBP features, radius of circle (spatial resolution of the operator)
 
 ### Visualization
 
 ![Area features (10 classes)](figures/area-features-3d.png)
 
 ### Training and evaluating a model
+
+To reproduce the results from the experiments in Section III C, comment/uncomment necessary lines to configure the experiment:
+- set of features
+- output directory and prefix
+- experiments to run
+
+A log file will be saved to the ```<output_dir>```. Trained models, if any, will be saved to ```<model_dir>```. All output files will have ```<output_prefix>``` in the filename.
 
 #### Plot the confusion matrix for binary classification
 

@@ -15,9 +15,7 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 
 import mahotas.features
-from sklearn import cluster
 from skimage.feature import local_binary_pattern
-from scipy.ndimage.filters import median_filter, gaussian_filter
 
 import utils
 

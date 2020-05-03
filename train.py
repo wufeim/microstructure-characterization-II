@@ -113,6 +113,7 @@ if __name__ == '__main__':
     ## Model Config ##
     ##################
 
+    # Step 1/3:
     # Comment/uncomment the following lines to choose the feature set for
     # Task a and Task b
     feature_names = []
@@ -121,11 +122,13 @@ if __name__ == '__main__':
     feature_names += ['haralick_{:d}'.format(i) for i in range(13)]
     feature_names += ['lbp_{:d}'.format(i) for i in range(12)]
 
+    # Step 2/3:
     # Set output directory and file prefix
     output_dir = 'results'
     model_dir = 'train_models'
     output_prefix = 'results_may03'
 
+    # Step 3/3:
     # Comment/uncomment the following lines to choose experiments
     # Task a:        10-class classification to predict microstructure
     #                processing history
@@ -134,8 +137,8 @@ if __name__ == '__main__':
     # Experiment 4:  Binary classification between two processing histories
     #                based on area features
     experiment_list = []
-    # experiment_list.append('Task-a')
-    # experiment_list.append('Task-b')
+    experiment_list.append('Task-a')
+    experiment_list.append('Task-b')
     experiment_list.append('Experiment-4')
 
     ####################

@@ -13,27 +13,6 @@ FEATURE_NAMES = [
 ]
 
 
-def extract_feature(feature_name, filenames, **kwargs):
-    if feature_name not in FEATURE_NAMES:
-        raise Exception('Unknown feature name {:s}.'.format(feature_name))
-
-    if feature_name == 'area':
-        return area_features(filenames)
-    elif feature_name == 'phase_count':
-        try:
-            phase_id = kwargs['phase_id']
-        except KeyError:
-            raise Exception(
-                'Trying to extract feature {:s}, but no {:s} specified.'
-                .format(feature_name, 'phase_id')
-            )
-        return spatial_features(filenames, phase_id)
-    elif feature_name == 'haralick':
-        return haralick_features(filenames)
-    elif feature_name == 'lbp':
-        return lbp_features(filenames)
-
-
 def collect_features_by_filenames(filenames, feature_names, **kwargs):
     for fn in feature_names:
         if fn not in FEATURE_NAMES:
