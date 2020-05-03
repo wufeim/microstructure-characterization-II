@@ -1,6 +1,6 @@
 # Microstructure Characterization II
 
-This is the repository for microstructure characterization research II since May 2019. It is composed of two parts:
+This is the repository for microstructure characterization research II since May 2019. It consists of two parts:
 
 - **Discriminative**: Feature engineering for microstructure characterization
 - **Generative**: Representation learning of microstructure with GANs
