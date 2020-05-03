@@ -23,6 +23,23 @@ COLORS = [(219, 94, 86),
           (86, 219, 127),
           (86, 111, 219)]
 
+
+class Logger(object):
+
+    def __init__(self, filename):
+        self.str = ''
+        self.filename = filename
+
+    def log(self, str):
+        self.str += str + '\n'
+        print(str)
+
+    def flush(self):
+        with open(self.filename, 'w') as f:
+            f.write(self.str)
+            f.close()
+
+
 def format_time(time):
     time = int(time)
     if time < 60:
@@ -48,8 +65,10 @@ def crop_image(image):
         raise Exception("Unknown image size: {}".format(image.shape))
 
 
-def segment_image(image_name, d=15, sigma_color=75, sigma_space=75):
-    _, seg_img = features.segmentation(image_name, d, sigma_color, sigma_space,
+def segment_image(img, d=15, sigma_color=75, sigma_space=75):
+    if len(img.shape) > 2 and img.shape[2] != 1:
+        raise ValueError('The input image should be in grayscale')
+    _, seg_img = features.segmentation(img, d, sigma_color, sigma_space,
                                        visualization=True)
     return seg_img
 

@@ -79,14 +79,16 @@ def lbp_features(image_names, P=10, R=5):
     return f
 
 
-def spatial(image_name, d=15, sigma_color=75, sigma_space=75):
+def spatial(image_name, d=15, sigma_color=75, sigma_space=75,
+            with_info_bar=True):
     img = cv2.imread(image_name, cv2.IMREAD_GRAYSCALE)
     if img is None:
         raise FileNotFoundError("Image {:s} cannot be opened."
                                 .format(image_name))
 
     # Pre-process the images.
-    img = utils.crop_image(img)
+    if with_info_bar:
+        img = utils.crop_image(img)
     img = cv2.bilateralFilter(img, d, sigma_color, sigma_space)
 
     # Apply KMeans.
@@ -144,11 +146,12 @@ def spatial(image_name, d=15, sigma_color=75, sigma_space=75):
     return f
 
 
-def spatial_features(image_names, d=15, sigma_color=75, sigma_space=75):
+def spatial_features(image_names, d=15, sigma_color=75, sigma_space=75,
+                     with_info_bar=True):
     features = []
     for i in image_names:
         try:
-            feature = spatial(i, d, sigma_color, sigma_space)
+            feature = spatial(i, d, sigma_color, sigma_space, with_info_bar)
         except FileNotFoundError as e:
             print("File not found ({}): {}".format(e.errno, e.strerror))
             continue
@@ -160,15 +163,11 @@ def spatial_features(image_names, d=15, sigma_color=75, sigma_space=75):
     return features
 
 
-def segmentation(image_name, d=15, sigma_color=75, sigma_space=75,
-                     visualization=True):
-    img = cv2.imread(image_name, cv2.IMREAD_GRAYSCALE)
-    if img is None:
-        raise FileNotFoundError("Image {:s} cannot be opened."
-                                .format(image_name))
-
+def segmentation(img, d=15, sigma_color=75, sigma_space=75,
+                 with_info_bar=True, visualization=True):
     # Pre-process the images.
-    img = utils.crop_image(img)
+    if with_info_bar:
+        img = utils.crop_image(img)
     img = cv2.bilateralFilter(img, d, sigma_color, sigma_space)
 
     # Apply KMeans.
@@ -210,11 +209,17 @@ def segmentation(image_name, d=15, sigma_color=75, sigma_space=75,
         return features
 
 
-def area_features(image_names, d=15, sigma_color=75, sigma_space=75):
+def area_features(image_names, d=15, sigma_color=75, sigma_space=75,
+                  with_info_bar=True):
     features = []
     for i in image_names:
         try:
-            feature = segmentation(i, d, sigma_color, sigma_space,
+            img = cv2.imread(i, cv2.IMREAD_GRAYSCALE)
+            if img is None:
+                raise FileNotFoundError("Image {:s} cannot be opened."
+                                        .format(i))
+            feature = segmentation(img, d, sigma_color, sigma_space,
+                                   with_info_bar=with_info_bar,
                                    visualization=False)
         except FileNotFoundError as e:
             print("File not found ({}): {}".format(e.errno, e.strerror))

@@ -133,3 +133,12 @@ dmypy.json
 
 # PyCharm
 .idea/
+
+# Some data not to be released
+features_feb02.csv
+
+# Saved models
+*.joblib
+
+# Testing outputs
+results/
