@@ -9,9 +9,9 @@ This is the repository for microstructure characterization research II since May
 
 This repo contains code for reproducing key results in [Image-driven discriminative and generative machine learning algorithms for establishing microstructure-processing relationships](#).
 
-Our previous work: [An image-driven machine learning approach to kinetic modeling of a discontinuous precipitation reaction](https://arxiv.org/abs/1906.05496).
+(Our previous work on this topic: [An image-driven machine learning approach to kinetic modeling of a discontinuous precipitation reaction](https://arxiv.org/abs/1906.05496).)
 
-## Feature Engineering for Image Classification
+## Feature Engineering for Microstructure Characterization
 
 ### Resources
 
@@ -20,11 +20,9 @@ Our previous work: [An image-driven machine learning approach to kinetic modelin
 - ```utils.py```
 - ```features/```
 
-### Binary Classification
+### Collect features
 
-### Visualization
-
-#### Area features
+#### Feature 1: Area features
 
 After features are extracted, you can plot the area features by running
 
@@ -32,24 +30,18 @@ After features are extracted, you can plot the area features by running
 python plot/area_features.py results/area_featurs.csv binary figures/area_features_binary.png
 ```
 
+### Visualization
+
 ![Area features (10 classes)](figures/area-features-3d.png)
 
+### Training and evaluating a model
+
 #### Plot the confusion matrix for binary classification
-
-Before this step, make sure you have trained a binary classification model and have the confusion matrix results ready.
-
-To plot the confusion matrix, simply run
-
-```shell script
-python plot/confusion_matrix.py
-```
 
 ![Confusion matrix](figures/binary_classification_results_f1.png)
 
 The output figure will be saved to the ```./figures``` directory.
 
 ## Representation Learning with GANs
-
-### Resources
 
 ### System requirements
