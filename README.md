@@ -37,8 +37,6 @@ Default arguments of ```collect_features_by_filenames()``` include:
 - ```P=10```: param for LBP features, number of circularly symmetric neighbor set points (quantization of the angular space)
 - ```R=5```: param for LBP features, radius of circle (spatial resolution of the operator)
 
-<img src="figures/area-features-3d.png" height="60%" width="60%" />
-
 ### Training and evaluating a model
 
 To reproduce the results from the experiments in Section III C, comment/uncomment necessary lines to configure the experiment:
@@ -48,16 +46,18 @@ To reproduce the results from the experiments in Section III C, comment/uncommen
 
 A log file will be saved to the ```<output_dir>```. Trained models, if any, will be saved to ```<model_dir>```. All output files will have ```<output_prefix>``` in the filename.
 
-#### Plot the confusion matrix for binary classification
-
-<img src="figures/binary_classification_results_f1.png" height="60%" width="60%" />
-
-The output figure will be saved to the ```./figures``` directory.
-
 ## Representation Learning with GANs
 
 ### System requirements
 
-## In ```utils.py```
+## Other Helper Functions in ```utils.py```
 
-```utils.py``` provides
+```utils.py``` also provides some helper functions to visualize results from the experiments above. Output images will be saved to the ```figures/``` directory.
+
+### Area Features
+
+<img src="figures/area-features-3d.png" height="60%" width="60%" />
+
+### Confusion Matrix
+
+<img src="figures/binary_classification_results_f1.png" height="60%" width="60%" />
