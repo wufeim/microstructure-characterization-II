@@ -39,7 +39,9 @@ Default arguments of ```collect_features_by_filenames()``` include:
 
 ### Visualization
 
-<img src="figures/area-features-3d.png" height="50%" width="50%">
+<div style="text-align:center">
+<img src="figures/area-features-3d.png" height="60%" width="60%">
+</div>
 
 ### Training and evaluating a model
 
@@ -52,7 +54,9 @@ A log file will be saved to the ```<output_dir>```. Trained models, if any, will
 
 #### Plot the confusion matrix for binary classification
 
-<img src="figures/binary_classification_results_f1.png" height="50%" width="50%">
+<div style="text-align:center">
+<img src="figures/binary_classification_results_f1.png" height="60%" width="60%">
+</div>
 
 The output figure will be saved to the ```./figures``` directory.
 
