@@ -38,7 +38,7 @@ python segment_image.py "datadata/DUM1144 005 500X 30keV HC14 15mm Left 2 LBE 00
 
 For demonstration, an sample image is provided: ```data/DUM1144 005 500X 30keV HC14 15mm Left 2 LBE 005.png```.
 
-### Collect Features
+### Collecting Features
 
 The list of features implemented here are:
 - Area features
