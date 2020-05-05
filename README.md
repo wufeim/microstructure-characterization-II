@@ -52,7 +52,7 @@ A log file will be saved to the ```<output_dir>```. Trained models, if any, will
 
 #### Plot the confusion matrix for binary classification
 
-![Confusion matrix](figures/binary_classification_results_f1.png){:height="50%" width="50%"}
+<img src="figures/binary_classification_results_f1.png" height="50%">
 
 The output figure will be saved to the ```./figures``` directory.
 
