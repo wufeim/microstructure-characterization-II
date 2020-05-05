@@ -101,8 +101,8 @@ def train_binary_classification(output_dir, output_prefix, logger):
     f1_results.set_index('class', inplace=True)
     mcc_results.set_index('class', inplace=True)
 
-    f1_results.to_csv(os.path.join(output_dir, output_prefix+'binary_classification_results_f1.csv'))
-    mcc_results.to_csv(os.path.join(output_dir, output_prefix+'binary_classification_results_mcc.csv'))
+    f1_results.to_csv(os.path.join(output_dir, output_prefix+'_binary_classification_results_f1.csv'))
+    mcc_results.to_csv(os.path.join(output_dir, output_prefix+'_binary_classification_results_mcc.csv'))
 
     logger.log('-' * 32 + '\n')
 

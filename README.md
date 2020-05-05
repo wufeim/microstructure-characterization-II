@@ -37,8 +37,6 @@ Default arguments of ```collect_features_by_filenames()``` include:
 - ```P=10```: param for LBP features, number of circularly symmetric neighbor set points (quantization of the angular space)
 - ```R=5```: param for LBP features, radius of circle (spatial resolution of the operator)
 
-### Visualization
-
 <img src="figures/area-features-3d.png" height="60%" width="60%" />
 
 ### Training and evaluating a model
@@ -59,3 +57,7 @@ The output figure will be saved to the ```./figures``` directory.
 ## Representation Learning with GANs
 
 ### System requirements
+
+## In ```utils.py```
+
+```utils.py``` provides
