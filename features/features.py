@@ -84,7 +84,6 @@ def spatial(image_name, d=15, sigma_color=75, sigma_space=75,
         raise FileNotFoundError("Image {:s} cannot be opened."
                                 .format(image_name))
 
-    # Pre-process the images.
     if with_info_bar:
         img = utils.crop_image(img)
     img = cv2.bilateralFilter(img, d, sigma_color, sigma_space)
@@ -163,7 +162,6 @@ def spatial_features(image_names, d=15, sigma_color=75, sigma_space=75,
 
 def segmentation(img, d=15, sigma_color=75, sigma_space=75,
                  with_info_bar=True, visualization=True):
-    # Pre-process the images.
     if with_info_bar:
         img = utils.crop_image(img)
     img = cv2.bilateralFilter(img, d, sigma_color, sigma_space)

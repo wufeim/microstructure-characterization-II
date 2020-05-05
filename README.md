@@ -13,7 +13,32 @@ This repo contains code for reproducing key results in [Image-driven discriminat
 
 ## Feature Engineering for Microstructure Characterization
 
-### Collect features
+### Microstructure Image Segmentation
+
+To segment a microstructure image, run
+```python
+import utils
+img = utils.segment_image(img)
+```
+
+The input image should be in grayscale and the default arguments are:
+- ```d=15```: param for bilateral filtering used for segmentation, diameter of each pixel neighborhood
+- ```sigma_color=75```: param for bilateral filtering used for segmentation, filter sigma in the color space
+- ```sigma_space=75```: param for bilateral filtering used for segmentation, filter sigma in the coordinate space
+- ```with_info_bar=True```: boolean, whether to remove info bar from the image using ```utils.crop_image()```
+
+For convenience, a Python script is also provided:
+```shell script
+python segment_image.py <path_to_image_file>
+```
+Note: for image filename with spaces, encapsulate the image name by quotation marks:
+```shell script
+python segment_image.py "datadata/DUM1144 005 500X 30keV HC14 15mm Left 2 LBE 005.png"
+```
+
+For demonstration, an sample image is provided: ```data/DUM1144 005 500X 30keV HC14 15mm Left 2 LBE 005.png```.
+
+### Collect Features
 
 The list of features implemented here are:
 - Area features
@@ -37,7 +62,9 @@ Default arguments of ```collect_features_by_filenames()``` include:
 - ```P=10```: param for LBP features, number of circularly symmetric neighbor set points (quantization of the angular space)
 - ```R=5```: param for LBP features, radius of circle (spatial resolution of the operator)
 
-### Training and evaluating a model
+The return value of ```collect_features_by_filenames()``` is an ```numpy.ndarray``` of shape m by n, where m is the number of images and n the length of the feature vector. The order of the features names is ignored and the order of the features in the feature vector is area features, spatial features, Haralick features, and LBP features.
+
+### Training and Evaluating a Model
 
 To reproduce the results from the experiments in Section III C, comment/uncomment necessary lines to configure the experiment:
 - set of features
@@ -48,7 +75,7 @@ A log file will be saved to the ```<output_dir>```. Trained models, if any, will
 
 ## Representation Learning with GANs
 
-### System requirements
+### System Requirements
 
 ## Other Helper Functions in ```utils.py```
 

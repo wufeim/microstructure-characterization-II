@@ -64,10 +64,12 @@ def crop_image(image):
         raise Exception("Unknown image size: {}".format(image.shape))
 
 
-def segment_image(img, d=15, sigma_color=75, sigma_space=75):
+def segment_image(img, d=15, sigma_color=75, sigma_space=75,
+                  with_info_bar=True):
     if len(img.shape) > 2 and img.shape[2] != 1:
         raise ValueError('The input image should be in grayscale')
     _, seg_img = features.segmentation(img, d, sigma_color, sigma_space,
+                                       with_info_bar=with_info_bar,
                                        visualization=True)
     return seg_img
 
@@ -121,6 +123,7 @@ def plot_confusion_matrix(confusion_matrix_file, clim, plot_title=None,
 
 if __name__ == '__main__':
 
+    # TEST: plot confusion matrix
     plot_confusion_matrix(
         'results/results_may03binary_classification_results_f1.csv',
         (0.0, 1.0)
