@@ -36,7 +36,7 @@ Note: for image filename with spaces, encapsulate the image name by quotation ma
 python segment_image.py "datadata/DUM1144 005 500X 30keV HC14 15mm Left 2 LBE 005.png"
 ```
 
-For demonstration, an sample image is provided: ```data/DUM1144 005 500X 30keV HC14 15mm Left 2 LBE 005.png```.
+For demonstration, a sample image is provided: ```data/DUM1144 005 500X 30keV HC14 15mm Left 2 LBE 005.png```.
 
 ### Collecting Features
 
@@ -75,7 +75,14 @@ A log file will be saved to the ```<output_dir>```. Trained models, if any, will
 
 ## Representation Learning with GANs
 
-### System Requirements
+- **Progressive Growing of GANs**: https://github.com/tkarras/progressive_growing_of_gans
+- **Pix2Pix**: https://github.com/phillipi/pix2pix
+
+### Our System
+
+- System: Ubuntu 18.04 NVIDIA RTX Titan
+- Environment: Python 3.6.9, TensorFlow 1.13.1
+- GPU: NVIDIA RTX Titan
 
 ## Other Helper Functions in ```utils.py```
 
