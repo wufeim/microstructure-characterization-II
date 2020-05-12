@@ -117,7 +117,7 @@ if __name__ == '__main__':
     # Comment/uncomment the following lines to choose the feature set for
     # Task a and Task b
     feature_names = []
-    feature_names += ['area_{:d}'.format(i) for i in range(3)]
+    feature_names += ['area_{:d}'.format(i) for i in range(2)]
     feature_names += ['spatial_{:d}'.format(i) for i in range(14)]
     feature_names += ['haralick_{:d}'.format(i) for i in range(13)]
     feature_names += ['lbp_{:d}'.format(i) for i in range(12)]
@@ -139,7 +139,7 @@ if __name__ == '__main__':
     experiment_list = []
     experiment_list.append('Task-a')
     experiment_list.append('Task-b')
-    experiment_list.append('Experiment-4')
+    # experiment_list.append('Experiment-4')
 
     ####################
     ## Start training ##

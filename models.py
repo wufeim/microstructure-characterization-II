@@ -27,6 +27,7 @@ def train_random_forest(X, Y, logger):
     skf = StratifiedKFold(n_splits=5)
     count = 1
     acc = []
+    f1 = []
     for train_index, test_index in skf.split(np.zeros((len(Y), 1)), Y):
         logger.log('k-fold: #{}'.format(count))
         count += 1
@@ -34,7 +35,7 @@ def train_random_forest(X, Y, logger):
         test_labels = Y[test_index]
         train = X[train_index]
         test = X[test_index]
-        model = RandomForestClassifier(n_estimators=80, criterion='entropy',
+        model = RandomForestClassifier(n_estimators=100, criterion='entropy',
                                        max_features='sqrt',
                                        n_jobs=-1, verbose=0)
         model.fit(train, train_labels)
@@ -46,12 +47,20 @@ def train_random_forest(X, Y, logger):
             max_depths.append(ind_tree.tree_.max_depth)
 
         logger.log(f'    Average number of nodes {int(np.mean(n_nodes))}')
-        print(f'    Average maximum depth {int(np.mean(max_depths))}')
+        logger.log(f'    Average maximum depth {int(np.mean(max_depths))}')
 
         train_rf_predictions = model.predict(train)
         train_rf_probs = model.predict_proba(train)[:, 1]
         rf_predictions = model.predict(test)
         rf_probs = model.predict_proba(test)[:, 1]
+
+        if np.sum(test_labels == 0) == 0 or np.sum(test_labels == 1) == 0:
+            # print('Error: Only one label in test_labels.')
+            continue
+
+        a = f1_score(test_labels, rf_predictions, average='weighted')
+        f1.append(a)
+        logger.log('    F1: {}'.format(a))
 
         a = sum((rf_predictions == test_labels) / len(test))
         acc.append(a)
@@ -59,6 +68,7 @@ def train_random_forest(X, Y, logger):
         logger.log('    Feature importances: {}'.format(model.feature_importances_))
 
     logger.log('\nAverage accuracy: {}'.format(sum(acc) / len(acc)))
+    logger.log('Average F1: {}'.format(sum(f1) / len(f1)))
     return model
 
 
