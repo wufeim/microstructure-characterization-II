@@ -17,3 +17,5 @@ Configurations:
 Configurations:
 * ```Image filename```: image filename
 * ```Output path```: path for output files
+
+*Last update: Oct. 05, 2020*
