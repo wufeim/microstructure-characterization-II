@@ -6,6 +6,10 @@ This is a GUI app for simple feature collection and image segmentation.
 
 ## Installation
 
+## Documentation
+
+See [documentation.md](documentation.md).
+
 ## Reference papers
 
 * Image-driven discriminative and generative machine learning algorithms for establishing microstructure-processing relationships: [paper](https://doi.org/10.1063/5.0013720)
