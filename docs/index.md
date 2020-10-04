@@ -4,7 +4,18 @@
 
 This is a GUI app for simple feature collection and image segmentation.
 
+## Installation
+
+## Documentation
+
+See [documentation.md](documentation.md).
+
 ## License
+
+Reference papers:
+
+* Image-driven discriminative and generative machine learning algorithms for establishing microstructure-processing relationships: [paper](https://doi.org/10.1063/5.0013720)
+* An image-driven machine learning approach to kinetic modeling of a discontinuous precipitation reaction: [paper](https://doi.org/10.1016/j.matchar.2020.110379)
 
 If you use our algorithms or this toolbox in an academic work, please cite:
 
@@ -22,17 +33,6 @@ URL = {https://doi.org/10.1063/5.0013720},
 eprint = {https://doi.org/10.1063/5.0013720}
 }
 ```
-
-## Installation
-
-## Documentation
-
-See [documentation.md](documentation.md).
-
-## Reference papers
-
-* Image-driven discriminative and generative machine learning algorithms for establishing microstructure-processing relationships: [paper](https://doi.org/10.1063/5.0013720)
-* An image-driven machine learning approach to kinetic modeling of a discontinuous precipitation reaction: [paper](https://doi.org/10.1016/j.matchar.2020.110379)
 
 ## Contact
 
