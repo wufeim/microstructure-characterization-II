@@ -23,7 +23,7 @@ If you use our algorithms or this toolbox in an academic work, please cite:
 
 ```
 @article{doi:10.1063/5.0013720,
-author = {Ma,W.  and Kautz,E. J.  and Baskaran,A.  and Chowdhury,A.  and Joshi,V.  and Yener,B.  and Lewis,D. J. },
+author = {Ma,W. and Kautz,E. J. and Baskaran,A. and Chowdhury,A. and Joshi,V. and Yener,B. and Lewis,D. J.},
 title = {Image-driven discriminative and generative machine learning algorithms for establishing microstructure–processing relationships},
 journal = {Journal of Applied Physics},
 volume = {128},
