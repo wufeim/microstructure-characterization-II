@@ -12,6 +12,8 @@ See [documentation.md](documentation.md).
 
 ## License
 
+This work is released under [GNU General Public License 3.0](https://choosealicense.com/licenses/gpl-3.0/).
+
 Reference papers:
 
 * Image-driven discriminative and generative machine learning algorithms for establishing microstructure-processing relationships: [paper](https://doi.org/10.1063/5.0013720)
