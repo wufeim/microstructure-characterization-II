@@ -4,6 +4,8 @@
 
 This is a GUI app for simple feature collection and image segmentation.
 
+![screenshot](images/mainpage.png)
+
 ## Installation
 
 ## Documentation
