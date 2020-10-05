@@ -7,9 +7,9 @@ This is the repository for microstructure characterization research II since May
 
 ## Publication
 
-This repo contains code for reproducing key results in [Image-driven discriminative and generative machine learning algorithms for establishing microstructure-processing relationships](#).
+This repo contains code for reproducing key results in [Image-driven discriminative and generative machine learning algorithms for establishing microstructure-processing relationships](https://doi.org/10.1063/5.0013720).
 
-(Our previous work on this topic: [An image-driven machine learning approach to kinetic modeling of a discontinuous precipitation reaction](https://arxiv.org/abs/1906.05496).)
+Our previous work on this topic: [An image-driven machine learning approach to kinetic modeling of a discontinuous precipitation reaction](https://arxiv.org/abs/1906.05496).
 
 ## Feature Engineering for Microstructure Characterization
 
