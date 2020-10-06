@@ -8,6 +8,20 @@ This is a GUI app for simple feature collection and image segmentation.
 
 ## Installation
 
+1. Download the app from the [releases page](https://github.com/wufeim/microstructure-characterization-II/releases). Unzip the folder.
+
+2. Configure the Python environment according to ```requirements.txt```. (You may want to install [virtualenv](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).) A command-line example (Linux and MacOS):
+   ```sh
+   $ python3 -m venv pyqt
+   $ source pyqt/bin/activate
+   $ pip3 install -r requirements.txt
+   ```
+
+3. Run the app with:
+   ```sh
+   $ python3 main.py
+   ```
+
 ## Documentation
 
 See [documentation.md](documentation.md).
