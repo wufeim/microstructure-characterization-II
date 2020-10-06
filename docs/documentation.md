@@ -1,5 +1,10 @@
 # Documentation
 
+* Feature collection
+* Parameter settings
+* Image segmentation
+* Troubleshooting
+
 ## Feature collection
 
 ![screenshot](images/feature_collection.png)
