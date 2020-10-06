@@ -1,0 +1,8 @@
+mahotas==1.4.11
+matplotlib==3.3.2
+numpy==1.19.1
+opencv-python==3.4.2.17
+pandas==1.1.2
+PyQt5==5.9.2
+scikit-image==0.16.2
+scipy==1.5.2
