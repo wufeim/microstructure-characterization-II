@@ -257,7 +257,7 @@ class ParamDialog(QDialog, QMainWindow):
 
     def openDocPage(self):
         QDesktopServices.openUrl(QUrl(
-            'http://wufeim.github.io/microstructure-characterization-II/documentation.html',
+            'https://wufeim.github.io/microstructure-characterization-II/documentation.html',
             QUrl.TolerantMode
         ))
 

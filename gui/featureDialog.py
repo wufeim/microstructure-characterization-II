@@ -208,7 +208,7 @@ class FeatureDialog(QDialog, QMainWindow):
 
     def openDocPage(self):
         QDesktopServices.openUrl(QUrl(
-            'https://wufeim.github.io/MicrostructureImageAnalysis/documentation',
+            'https://wufeim.github.io/microstructure-characterization-II/documentation.html',
             QUrl.TolerantMode
         ))
 

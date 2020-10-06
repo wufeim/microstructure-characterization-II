@@ -100,13 +100,13 @@ class MainWindow(QWidget):
 
     def openAboutPage(self):
         QDesktopServices.openUrl(QUrl(
-            "https://wufeim.github.io/MicrostructureImageAnalysis/",
+            'https://wufeim.github.io/microstructure-characterization-II/',
             QUrl.TolerantMode
         ))
 
     def openDocPage(self):
         QDesktopServices.openUrl(QUrl(
-            "https://wufeim.github.io/MicrostructureImageAnalysis/documentation",
+            'https://wufeim.github.io/microstructure-characterization-II/documentation.html',
             QUrl.TolerantMode
         ))
 
